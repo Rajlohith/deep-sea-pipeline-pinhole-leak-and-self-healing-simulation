@@ -654,9 +654,19 @@ class Visualizer:
             if has_lk and not healed:
                 # Annotate the orifice tone frequency
                 ax.text(
-                    10, aco_sig.max() * 0.6,
-                    f"{self.ss.f_orifice:.1f} Hz\norifice tone",
-                    fontsize=7.5, color=C_LEAK
+                    0.97, 0.97,
+                    "43.4 kHz\norifice tone",
+                    transform=ax.transAxes,
+                    ha="right",
+                    va="top",
+                    fontsize=8,
+                    color="#ff4d6d",
+                    bbox=dict(
+                        boxstyle="round,pad=0.2",
+                        facecolor="#0b1220",
+                        edgecolor="#ff4d6d",
+                        alpha=0.3
+                    )
                 )
 
             ax.set_title(
