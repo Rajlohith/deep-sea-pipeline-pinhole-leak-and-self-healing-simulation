@@ -1,0 +1,59 @@
+# PYTHON / COMPARED & OPTIMIZED
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VIRTUAL ENVIRONMENTS & SECRETS
+venv/
+.venv/
+env/
+ENV/
+bin/
+lib/
+include/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# DISTRIBUTION / PACKAGING
+build/
+dist/
+*.egg-info/
+*.egg
+*.spec
+
+# TESTING / COVERAGE REPORTS
+.tox/
+.coverage
+.cache
+.pytest_cache/
+htmlcov/
+
+# JUPYTER NOTEBOOKS
+.ipynb_checkpoints/
+
+# IDE & EDITOR FILES
+.vscode/
+.idea/
+*.swp
+
+# OS FILES
+.DS_Store
+Thumbs.db
+
+# LOGS / TEMP FILES
+*.log
+*.tmp
+
+# MATPLOTLIB CACHE
+.matplotlib/
+
+# PROJECT-SPECIFIC / GENERATED
+.outputs/
+
+# ==============================================================================
+# NOTES
+# ==============================================================================
+# Do NOT ignore *.png so you can track selected
+# figures in an 'assets/' folder for README
