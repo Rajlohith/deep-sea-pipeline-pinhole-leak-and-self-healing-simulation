@@ -51,6 +51,7 @@ Thumbs.db
 
 # PROJECT-SPECIFIC / GENERATED
 .outputs/
+outputs/
 
 # ==============================================================================
 # NOTES
