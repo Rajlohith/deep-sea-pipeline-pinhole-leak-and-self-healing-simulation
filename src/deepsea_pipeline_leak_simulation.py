@@ -24,7 +24,81 @@ References (cited inline throughout the code):
   [9] API MPMS (Manual of Petroleum Measurement Standards).
       → crude oil density 850 kg/m³, viscosity 0.015 Pa·s at 4°C
 """
+'''
+I. Foundational Self-Healing Mechanisms
 
+(Use these to cite the core mathematical parameters of your microcapsule and vascular simulation)
+
+[1] S. R. White, N. R. Sottos, P. H. Geubelle, J. S. Moore, M. R. Kessler, S. R. Sriram, E. N. Brown, and S. Viswanathan, "Autonomic healing of polymer composites," Nature, vol. 409, no. 6822, pp. 794–797, 2001.
+
+[2] K. S. Toohey, N. R. Sottos, J. A. Lewis, J. S. Moore, and S. R. White, "Self-healing materials with microvascular networks," Nature Materials, vol. 6, no. 8, pp. 581–585, 2007.
+
+[3] M. R. Kessler and S. R. White, "Self-activated healing of delamination damage in woven composites," Composites Part A: Applied Science and Manufacturing, vol. 32, no. 5, pp. 683–699, 2001.
+
+[4] Y. C. Yuan, M. Z. Rong, and M. Q. Zhang, "Self-healing polymeric materials using epoxy/mercaptan as the curative system," Progress in Organic Coatings, vol. 63, no. 4, 2008.
+II. Self-Healing in Extreme & Underwater Environments
+
+(Use these to justify why your simulated healing works at 3000m depth, 3°C, and high pressure)
+
+[5] H. Feng, F. Yu, Y. Zhou, M. Li, L. Xiao, and Y. Ao, "Fabrication of microcapsule-type composites with the capability of underwater self-healing and damage visualization," RSC Advances, vol. 10, no. 56, pp. 33675–33682, 2020.
+
+[6] A. R. Hamilton, N. R. Sottos, and S. R. White, "Pressurized vascular systems for self-healing materials," Journal of the Royal Society Interface, vol. 9, no. 70, pp. 1020–1028, 2012.
+
+[7] Y. Heo, M. H. Malakooti, and H. A. Sodano, "Self-healing polymers and composites for extreme environments," Journal of Materials Chemistry A, vol. 4, no. 19, pp. 7171–7189, 2016.
+
+[8] M. L. Zheludkevich, S. K. Poznyak, L. M. Rodrigues, D. Raps, T. Hack, L. F. Dick, T. Nunes, and M. G. S. Ferreira, "Active protection coatings with layered double hydroxide nanocontainers of corrosion inhibitor," Corrosion Science, vol. 52, no. 2, pp. 602–611, 2010. (Note: Representative paper for Self-Healing Anti-Corrosion Coatings).
+III. Deep-Sea Fluid Dynamics & Acoustic Detection
+
+(Use these to cite the physics behind the leak flow rate, pressure drops, and DAS sensor noise)
+
+[9] P. D. Juarez, A. De Rose, and P. T. Cole, "Fiber-optic distributed acoustic sensing for pipeline leak detection," in SPE Annual Technical Conference and Exhibition, Society of Petroleum Engineers, 2005.
+
+[10] G. M. Wenz, "Acoustic ambient noise in the ocean: Spectra and sources," The Journal of the Acoustical Society of America, vol. 34, no. 12, pp. 1936–1956, 1962.
+
+[11] International Organization for Standardization, Measurement of fluid flow by means of pressure differential devices inserted in circular cross-section conduits running full, ISO 5167:2003, 2003.
+
+[12] H. Blasius, "Das Ähnlichkeitsgesetz bei Reibungsvorgängen in Flüssigkeiten," Forschungsarbeiten auf dem Gebiete des Ingenieurwesens, vol. 131, pp. 1–40, 1913.
+
+[13] B. R. Munson, D. F. Young, and T. H. Okiishi, Fundamentals of Fluid Mechanics, 5th ed. Hoboken, NJ, USA: John Wiley & Sons, 2006.
+
+[14] American Petroleum Institute, Manual of Petroleum Measurement Standards (MPMS), Washington, D.C., USA.
+IV. Empirical Data & Validation
+
+(Use this to cite the real-world dataset you compared the simulation against)
+
+[15] Pipeline and Hazardous Materials Safety Administration (PHMSA), Hazardous Liquid Incident Flagged Files (2010-Present). U.S. Department of Transportation, 2025. [Online]. Available: https://www.phmsa.dot.gov/data-and-statistics/pipeline/pipeline-incident-flagged-files
+https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/data_statistics/pipeline/accident_hazardous_liquid_jan2010_present.zip.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Foundational Self-Healing
+2001-2007
+
+White et al. (2001) and Toohey et al. (2007) prove microcapsule and vascular healing in polymers.
+Fiber-Optic Leak Detection
+2005-2012
+
+Juarez (2005) introduces DAS for pipelines, showing it can "hear" leaks that sensors miss.
+Underwater Validation
+2020-2022
+
+Feng et al. (2020) proves that microcapsule healing actually works in high-pressure underwater environments.
+
+The Integration (Your Project)
+2026
+
+You combine DAS, Hybrid Healing, and PHMSA data into a single verified deep-sea simulation model.'''
 """
 Deep-Sea Pipeline Pinhole Leak & Self-Healing Simulation
 
