@@ -1,4 +1,9 @@
 # Deep-Sea Pipeline: Pinhole Leak Detection and Self-Healing Simulation
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![Simulation](https://img.shields.io/badge/Type-Physics%20Simulation-orange)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Random%20Forest-8A2BE2)
+![Research](https://img.shields.io/badge/Research-Academic-success)
+![Validation](https://img.shields.io/badge/Validation-PHMSA%20Dataset-blue)
 
 > A Physics-Grounded Academic Simulation of a 7-Layer Smart Pipeline featuring Pinhole Leak Detection, Multi-Sensor Fusion, Hybrid Self-Healing, Machine Learning Sensor Fusion, and Real-World PHMSA Validation.
 
