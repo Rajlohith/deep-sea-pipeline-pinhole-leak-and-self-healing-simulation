@@ -228,20 +228,6 @@ deep-sea-pipeline-pinhole-leak-and-self-healing-simulation/
 ├── src/
 │   ├── __init__.py
 │   └── deepsea_pipeline_leak_simulation.py
-│
-├── outputs/
-│   ├── Fig1_Pressure_Flow.png
-│   ├── Fig2_Sensor_Signals.png
-│   ├── Fig3_Healing_Response.png
-│   ├── Fig4_7Layer_CrossSection.png
-│   ├── Fig5_Intelligence_Layer.png
-│   ├── Fig6_Structural_Environment.png
-│   ├── Fig7_Performance_Summary.png
-│   ├── Fig8_PHMSA_Landscape.png
-│   ├── Fig9_Quantitative_Validation.png
-│   ├── Fig10_IEEE_Validation_Dashboard.png
-│   └── Fig11_ML_Sensor_Fusion.png
-│
 ├── .gitignore
 ├── main.py
 ├── phmsa_clean.csv
