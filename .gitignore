@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 tempCodeRunnerFile.py
+*.pyc
+*.pyo
 
 
 # VIRTUAL ENVIRONMENTS & SECRETS
@@ -24,6 +26,9 @@ dist/
 *.egg-info/
 *.egg
 *.spec
+
+# Generated figures
+outputs/
 
 # TESTING / COVERAGE REPORTS
 .tox/

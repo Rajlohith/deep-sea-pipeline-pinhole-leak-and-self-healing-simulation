@@ -1,3 +1,3 @@
-from .deepsea_pipeline_leak_simulation import PipelineSimulationRunner
+from .deepsea_pipeline_leak_simulation import main
 
-__all__ = ["PipelineSimulationRunner"]
+__all__ = ["main"]

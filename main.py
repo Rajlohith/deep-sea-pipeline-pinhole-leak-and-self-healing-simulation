@@ -1,5 +1,4 @@
-from src import PipelineSimulationRunner
+from src import main
 
 if __name__ == "__main__":
-    runner = PipelineSimulationRunner()
-    runner.run()
+    main()
