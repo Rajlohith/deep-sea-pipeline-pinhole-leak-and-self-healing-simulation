@@ -976,7 +976,7 @@ class MLSensorFusion:
         leak_active       : bool,
         crack_frac_override: Optional[float] = None,
     ) -> np.ndarray:
-        """Generate one 16-D feature vector for a single Monte Carlo scenario.
+        """Generate one 15-D feature vector for a single Monte Carlo scenario.
 
         Computes all features from first principles using randomised operating
         parameters.  Never permanently modifies any existing class attribute.
@@ -990,7 +990,7 @@ class MLSensorFusion:
                                  decision_timeline() to simulate healing).
 
         Returns:
-            feature_vector: np.ndarray of shape (16,), dtype float64.
+            feature_vector: np.ndarray of shape (15,), dtype float64.
         """
         # ── Randomise operating conditions (temporary locals only) ─────────
         depth_m       = float(rng.uniform(500.0, 3000.0))
@@ -1070,7 +1070,6 @@ class MLSensorFusion:
 
         h_sig = (amp * np.sin(2.0 * np.pi * f_ore * t_h)
                 + rng.normal(0.0, hydrophone_noise_std, self._N_SIG))
-        + rng.normal(0.0, noise_std * 4.0, self._N_SIG)
         fft_a  = np.abs(np.fft.rfft(h_sig))
         freqs  = np.fft.rfftfreq(self._N_SIG, 1.0 / self._FS)
         h_rms  = float(np.sqrt(np.mean(h_sig ** 2)))
@@ -2930,7 +2929,7 @@ def print_ieee_report(df: pd.DataFrame, phys: PipelinePhysics,
   ──────────────────────────
   Unhealed 24 hr  : {vol_u:.1f} L  (P{pct_u:.0f} of PHMSA — motivates L5)
   L5 Hybrid healed: {vol_h:.3f} L  (P{pct_h:.0f} of PHMSA — below median)  ✓
-  Volume reduction: {(1-vol_h/vol_u)*100:.0f}%  [Hybrid IPDI+PTFE+SMP, Refs 10, 13]
+  Volume reduction: {(1-vol_h/vol_u)*100:.2f}%  [Hybrid IPDI+PTFE+SMP, Refs 10, 13]
 
   E. Detection Validation
   ────────────────────────
