@@ -7,6 +7,45 @@
 
 > A Physics-Grounded Academic Simulation of a 7-Layer Smart Pipeline featuring Pinhole Leak Detection, Multi-Sensor Fusion, Hybrid Self-Healing, Machine Learning Sensor Fusion, and Real-World PHMSA Validation.
 
+## Table of Contents
+
+- Overview
+- Key Features
+- Technology Stack
+- System Architecture
+  - Layer Architecture
+- Why Not DCPD and Grubbs Catalyst
+- Operating Conditions
+- Self-Healing Pipeline
+  - Current Workflow
+  - Hybrid Healing System Model
+  - Two-Phase Simulation Model
+- Machine Learning Sensor Fusion
+- Database and Validation Design
+  - PHMSA Validation Dataset
+- Repository Structure
+- Installation
+  - Setup
+  - Run the Full Simulation
+  - Run Specific Figures
+  - Skip PHMSA Validation
+- PHMSA Data Source
+  - Source
+  - File Used
+  - Conversion to CSV
+  - Result
+  - Refreshing
+- Output Figures
+- Project Evolution
+  - Initial Development
+  - Detection Modeling
+  - Self-Healing System
+  - Machine Learning Integration
+  - Real-World Validation
+- Notable Milestones
+- Research Applications
+- References
+
 This project simulates the complete lifecycle of a deep-sea crude oil pipeline incident: pinhole formation, signal detection across multiple sensing layers, autonomous self-healing, and recovery. It combines fluid mechanics, materials science, acoustic sensing theory, and machine learning into a single literature-grounded simulation, with every material and parameter choice traceable to a published source.
 
 The system models a 7-layer pipeline architecture operating at 3,000 m depth, where a 0.5 mm pinhole leak is detected through pressure, acoustic, and distributed fiber sensing, then autonomously sealed using a three-mechanism hybrid healing system, and finally cross-validated against real PHMSA pipeline incident records.
@@ -91,43 +130,26 @@ The project serves as both an academic design simulation and a research platform
 
 ## System Architecture
 
-```text
-                         +------------------------+
-                         |   Pipeline Conditions   |
-                         |  3,000 m / 297 bar /    |
-                         |   crude oil / 2-4 C     |
-                         +-----------+-------------+
-                                     |
-                                     v
-                     +--------------------------------+
-                     |     7-Layer Pipeline Shell      |
-                     |  Foam -> Inconel -> Sensors ->  |
-                     |   Healing -> Fiber -> Power      |
-                     +---------------+------------------+
-                                     |
-          +--------------------------+-------------------------+
-          |                                                     |
-          v                                                     v
+```mermaid
+flowchart TD
+    A["Pipeline Conditions<br/>3,000 m / 297 bar<br/>Crude oil / 2–4 °C"]
 
-+-------------------------+                        +--------------------------+
-| Detection Subsystem     |                        | Healing Subsystem        |
-| L3 Pressure/Vibration   |                        | L5 IPDI + PTFE + SMP     |
-| L4 Acoustic Hybrid      |                        | Two-Phase Kinetics       |
-| L6 Dual Fiber DAS       |                        |                          |
-+-------------------------+                        +--------------------------+
-          |                                                     |
-          +--------------------------+-------------------------+
-                                     |
-                                     v
-                     +--------------------------------+
-                     |  Random Forest Sensor Fusion    |
-                     |     (Module 7 Digital Twin)      |
-                     +---------------+------------------+
-                                     |
-                                     v
-                     +--------------------------------+
-                     |     PHMSA Real-World Validation  |
-                     +--------------------------------+
+    B["7-Layer Pipeline Shell<br/>Foam → Inconel → Sensors →<br/>Healing → Fiber → Power"]
+
+    C["Detection Subsystem<br/>L3 Pressure/Vibration<br/>L4 Acoustic Hybrid<br/>L6 Dual Fiber DAS"]
+
+    D["Healing Subsystem<br/>L5 IPDI + PTFE + SMP<br/>Two-Phase Kinetics"]
+
+    E["Random Forest Sensor Fusion<br/>(Module 7 Digital Twin)"]
+
+    F["PHMSA Real-World Validation"]
+
+    A --> B
+    B --> C
+    B --> D
+    C --> E
+    D --> E
+    E --> F
 ```
 
 ### Layer Architecture
@@ -232,14 +254,46 @@ deep-sea-pipeline-pinhole-leak-and-self-healing-simulation/
 │
 ├── src/
 │   ├── __init__.py
-│   └── deepsea_pipeline_leak_simulation.py
+│   ├── cli.py
+│   ├── config.py
+│   ├── domain/
+│   │   ├── __init__.py
+│   │   ├── layer_architecture.py
+│   │   ├── pipeline_physics.py
+│   │   ├── leak_simulator.py
+│   │   ├── sensor_system.py
+│   │   ├── healing_system.py
+│   │   └── power_system.py
+│   ├── ml/
+│   │   ├── __init__.py
+│   │   └── sensor_fusion.py
+│   ├── validation/
+│   │   ├── __init__.py
+│   │   └── phmsa_data.py
+│   └── plotting/
+│       ├── __init__.py
+│       ├── utils.py
+│       ├── fig01_pressure_flow.py
+│       ├── fig02_sensor_signals.py
+│       ├── fig03_healing_response.py
+│       ├── fig04_cross_section.py
+│       ├── fig05_intelligence_layer.py
+│       ├── fig06_structural_environment.py
+│       ├── fig07_performance_summary.py
+│       ├── fig08_phmsa_landscape.py
+│       ├── fig09_quantitative_validation.py
+│       ├── fig10_ieee_validation_dashboard.py
+│       └── fig11_ml_sensor_fusion.py
 ├── .gitignore
 ├── main.py
-├── phmsa_clean.csv
+├── phmsa.csv
+├── requirements.txt
 └── README.md
 ```
 
-Note: the simulation reads `phmsa_clean.csv` from the current working directory at runtime (`PHMSA_PATH = os.path.join(os.getcwd(), "phmsa_clean.csv")`). This file should be kept at the repository root alongside `main.py`, not inside `src/`, since the script is intended to be run from the project root.
+The `src` package is organized by responsibility: `domain/` holds the seven-layer physics and architecture classes (Modules 1-6), `ml/` holds the Random Forest sensor fusion digital twin (Module 7), `validation/` holds PHMSA data loading and the IEEE-style report, and `plotting/` holds one module per output figure. `config.py` centralizes shared paths and the color theme, and `cli.py` wires everything together behind the `main()` entry point.
+
+Note: the simulation reads `phmsa.csv` from the current working directory at runtime (`PHMSA_PATH = os.path.join(os.getcwd(), "phmsa.csv")`). This file should be kept at the repository root alongside `main.py`, not inside `src/`, since the script is intended to be run from the project root.
 
 ## Installation
 
@@ -248,7 +302,7 @@ Note: the simulation reads `phmsa_clean.csv` from the current working directory 
 ```bash
 cd deep-sea-pipeline-pinhole-leak-and-self-healing-simulation
 
-pip install numpy pandas scipy matplotlib scikit-learn
+pip install -r requirements.txt
 ```
 
 ### Run the Full Simulation
@@ -271,7 +325,79 @@ python main.py --figs 1 2 3
 python main.py --no-phmsa
 ```
 
-PHMSA validation figures (8, 9, and 10) require `phmsa_clean.csv` to be present at the project root. If the file is missing, the script will print a download link and skip those figures automatically.
+PHMSA validation figures (8, 9, and 10) require `phmsa.csv` to be present at the project root. If the file is missing, the script will print a download link and skip those figures automatically.
+
+## PHMSA Data Source
+
+This section records exactly where `phmsa.csv` comes from and how it was produced, so the dataset can be refreshed or audited later without guesswork.
+
+### Source
+
+**PHMSA Distribution, Transmission, Gathering, LNG, and Liquid Accident and Incident Data:**
+https://www.phmsa.dot.gov/data-and-statistics/pipeline/distribution-transmission-gathering-lng-and-liquid-accident-and-incident-data
+
+PHMSA publishes hazardous liquid pipeline accident data as a set of era-specific downloads, since the incident report form (RSPA/PHMSA Form F 7000-1) has been revised several times since the 1970s and each revision changed the data fields collected.
+
+### File Used
+
+| Era | Used? | Reason |
+| ----- | ----- | ----- |
+| Pre 1986 | No | Different, minimal field set; no leak-type or onshore/offshore classification |
+| 1986 – Jan 2002 | No | Different, minimal field set; no leak-type classification of any kind |
+| Jan 2002 – Dec 2009 | No | Partial field overlap, but leak-type, pressure, and diameter are recorded for well under half of incidents, and cost fields do not exist in this era's form at all |
+| **Jan 2010 – Present** | **Yes** | Identical schema (648 columns) to `phmsa.csv`; every column the simulation depends on is present and populated |
+
+**File:** `accident_hazardous_liquid_jan2010_present.txt`, from the "Jan 2010–Present" download on the page above.
+
+Format as downloaded:
+* Tab-delimited (`\t`)
+* ISO-8859-1 (Latin-1) encoding
+* CRLF line endings
+* 648 columns, header row included
+
+### Conversion to CSV
+
+The only transformation applied is a format conversion — tab-delimited/Latin-1 to comma-delimited/UTF-8. No rows are filtered, no columns are dropped or renamed, and no cell values are edited. This was confirmed by comparing the converted output against the previous `phmsa.csv` cell-by-cell: every row present in both files matched exactly, aside from a small number of cells (~0.03%) reflecting genuine PHMSA updates — investigations closing (`REPORT_TYPE` moving from `SUPPLEMENTAL` to `SUPPLEMENTAL FINAL`), causes being finalized, and cost estimates being revised.
+
+#### Script
+
+```python
+import pandas as pd
+
+RAW_PATH = "accident_hazardous_liquid_jan2010_present.txt"
+OUTPUT_PATH = "phmsa.csv"
+
+# Read the raw PHMSA download: tab-delimited, Latin-1 encoded
+df = pd.read_csv(RAW_PATH, sep="\t", encoding="latin-1", low_memory=False)
+
+# Write out as standard comma-delimited UTF-8 CSV
+# No filtering, no column changes, no value edits
+df.to_csv(OUTPUT_PATH, index=False, encoding="utf-8")
+
+print(f"Rows: {len(df)}  |  Columns: {len(df.columns)}")
+```
+
+Run from the directory containing the downloaded `.txt` file:
+
+```bash
+python convert_phmsa.py
+```
+
+### Result
+
+| | Rows | Columns | Years covered |
+| ----- | ----- | ----- | ----- |
+| Current `phmsa.csv` | 5,959 | 648 | 2010–2026 |
+
+### Refreshing
+
+PHMSA updates this dataset on an ongoing basis as incident investigations are filed, amended, and closed. To refresh:
+
+1. Download the current "Jan 2010–Present" file from the source link above.
+2. Run the script in the Script subsection above against it.
+3. Replace `phmsa.csv` at the project root with the new output.
+
+No changes to the simulation code are required — `phmsa.csv` is read at runtime from `PHMSA_PATH = os.path.join(os.getcwd(), "phmsa.csv")`, so any correctly formatted replacement file works as-is.
 
 ## Output Figures
 
