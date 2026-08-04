@@ -7,52 +7,48 @@
 
 > A Physics-Grounded Academic Simulation of a 7-Layer Smart Pipeline featuring Pinhole Leak Detection, Multi-Sensor Fusion, Hybrid Self-Healing, Machine Learning Sensor Fusion, and Real-World PHMSA Validation.
 
-## Table of Contents
-
-- Overview
-- Key Features
-- Technology Stack
-- System Architecture
-  - Layer Architecture
-- Why Not DCPD and Grubbs Catalyst
-- Operating Conditions
-- Self-Healing Pipeline
-  - Current Workflow
-  - Hybrid Healing System Model
-  - Two-Phase Simulation Model
-- Machine Learning Sensor Fusion
-- Database and Validation Design
-  - PHMSA Validation Dataset
-- Repository Structure
-- Installation
-  - Setup
-  - Run the Full Simulation
-  - Run Specific Figures
-  - Skip PHMSA Validation
-- PHMSA Data Source
-  - Source
-  - File Used
-  - Conversion to CSV
-  - Result
-  - Refreshing
-- Output Figures
-- Project Evolution
-  - Initial Development
-  - Detection Modeling
-  - Self-Healing System
-  - Machine Learning Integration
-  - Real-World Validation
-- Notable Milestones
-- Research Applications
-- References
-
 This project simulates the complete lifecycle of a deep-sea crude oil pipeline incident: pinhole formation, signal detection across multiple sensing layers, autonomous self-healing, and recovery. It combines fluid mechanics, materials science, acoustic sensing theory, and machine learning into a single literature-grounded simulation, with every material and parameter choice traceable to a published source.
 
 The system models a 7-layer pipeline architecture operating at 3,000 m depth, where a 0.5 mm pinhole leak is detected through pressure, acoustic, and distributed fiber sensing, then autonomously sealed using a three-mechanism hybrid healing system, and finally cross-validated against real PHMSA pipeline incident records.
 
-## Repository
+## Table of Contents
 
-**Repository:** deep-sea-pipeline-pinhole-leak-and-self-healing-simulation
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [System Architecture](#system-architecture)
+  - [Layer Architecture](#layer-architecture)
+- [Why Not DCPD and Grubbs Catalyst](#why-not-dcpd-and-grubbs-catalyst)
+- [Operating Conditions](#operating-conditions)
+- [Self-Healing Pipeline](#self-healing-pipeline)
+  - [Current Workflow](#current-workflow)
+  - [Hybrid Healing System Model](#hybrid-healing-system-model)
+  - [Two-Phase Simulation Model](#two-phase-simulation-model)
+- [Machine Learning Sensor Fusion](#machine-learning-sensor-fusion)
+- [Database and Validation Design](#database-and-validation-design)
+  - [PHMSA Validation Dataset](#phmsa-validation-dataset)
+- [Repository Structure](#repository-structure)
+- [Installation](#installation)
+  - [Setup](#setup)
+  - [Run the Full Simulation](#run-the-full-simulation)
+  - [Run Specific Figures](#run-specific-figures)
+  - [Skip PHMSA Validation](#skip-phmsa-validation)
+- [PHMSA Data Source](#phmsa-data-source)
+  - [Source](#source)
+  - [File Used](#file-used)
+  - [Conversion to CSV](#conversion-to-csv)
+  - [Result](#result)
+  - [Refreshing](#refreshing)
+- [Output Figures](#output-figures)
+- [Project Evolution](#project-evolution)
+  - [Initial Development](#initial-development)
+  - [Detection Modeling](#detection-modeling)
+  - [Self-Healing System](#self-healing-system)
+  - [Machine Learning Integration](#machine-learning-integration)
+  - [Real-World Validation](#real-world-validation)
+- [Notable Milestones](#notable-milestones)
+- [Research Applications](#research-applications)
+- [References](#references)
 
 ## Overview
 
@@ -134,7 +130,7 @@ The project serves as both an academic design simulation and a research platform
 flowchart TD
     A["Pipeline Conditions<br/>3,000 m / 297 bar<br/>Crude oil / 2–4 °C"]
 
-    B["7-Layer Pipeline Shell<br/>Foam → Inconel → Sensors →<br/>Healing → Fiber → Power"]
+    B["7-Layer Pipeline Shell<br/>Foam → Inconel → Sensors → Healing → Fiber → Power"]
 
     C["Detection Subsystem<br/>L3 Pressure/Vibration<br/>L4 Acoustic Hybrid<br/>L6 Dual Fiber DAS"]
 
