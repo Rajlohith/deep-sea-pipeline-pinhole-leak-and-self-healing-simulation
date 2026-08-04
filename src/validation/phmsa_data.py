@@ -13,7 +13,7 @@ from ..domain.healing_system import HealingSystem
 
 # ══════════════════════════════════════════════════════════════════════════════
 # PHMSA VALIDATION FIGURES (Figs 8–10)
-# Loads phmsa_clean.csv (5,890 incidents 2010–2025) and validates simulation.
+# Loads phmsa.csv (5,959 incidents, Jan 2010–present) and validates simulation.
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _load_phmsa() -> pd.DataFrame:
@@ -78,7 +78,7 @@ def print_ieee_report(df: pd.DataFrame, phys: PipelinePhysics,
   A. Dataset
   ──────────
   PHMSA Hazardous Liquid Incident Database [Ref 14]
-  N = {len(df):,} incidents (2010–2025); crude oil subset n = {len(df[df['COMMODITY_RELEASED_TYPE']=='CRUDE OIL']):,};
+  N = {len(df):,} incidents ({int(df['IYEAR'].min())}–{int(df['IYEAR'].max())}); crude oil subset n = {len(df[df['COMMODITY_RELEASED_TYPE']=='CRUDE OIL']):,};
   pinhole + crude oil subset n = {len(df_pc):,}.
 
   B. Layer Material Validation
@@ -150,4 +150,3 @@ def print_ieee_report(df: pd.DataFrame, phys: PipelinePhysics,
     for r in rows:
         print(f"  {r[0]:<28} {r[1]:<18} {r[2]}")
     print(f"\n{SEP}\n")
-

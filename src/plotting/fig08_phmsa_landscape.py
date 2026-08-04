@@ -20,16 +20,19 @@ def fig8_phmsa_landscape(df: pd.DataFrame):
     pin_frac  = len(df[(df["RELEASE_TYPE"]=="LEAK") &
                        (df["LEAK_TYPE"]=="PINHOLE")]) / max(len(all_leaks), 1)
 
+    yr_min, yr_max = int(df["IYEAR"].min()), int(df["IYEAR"].max())
+    yr_full_max = yr_max - 1  # exclude the current (partial) year from the annual trend
+
     fig, axes = plt.subplots(2, 2, figsize=(15, 9))
     fig.suptitle(
-        "FIG 8 — PHMSA Real-World Validation: Incident Landscape (2010–2025)\n"
+        f"FIG 8 — PHMSA Real-World Validation: Incident Landscape ({yr_min}–{yr_max})\n"
         f"Source: U.S. PHMSA Hazardous Liquid Incident Database [Ref 14]  "
         f"| N = {len(df):,} incidents",
         fontsize=11, fontweight="bold", color=C_NORMAL)
 
-    # (a) Annual incident count + linear trend
+    # (a) Annual incident count + linear trend — drop the current (partial) year
     ax = axes[0, 0]
-    ann = {y: c for y, c in df[df["IYEAR"]<=2025].groupby("IYEAR").size().items()}
+    ann = {y: c for y, c in df[df["IYEAR"]<=yr_full_max].groupby("IYEAR").size().items()}
     years  = sorted(ann.keys())
     counts = [ann[y] for y in years]
     ax.bar(years, counts, color=C_PHMSA, alpha=0.65, edgecolor=C_PHMSA, lw=0.5)
@@ -106,4 +109,3 @@ def fig8_phmsa_landscape(df: pd.DataFrame):
 
     fig.tight_layout()
     _save(fig, "Fig8_PHMSA_Landscape.png")
-

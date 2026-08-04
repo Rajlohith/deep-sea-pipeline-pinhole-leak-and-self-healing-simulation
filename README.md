@@ -128,7 +128,7 @@ The project serves as both an academic design simulation and a research platform
 
 ```mermaid
 flowchart TD
-    A["Pipeline Conditions<br/>3,000 m / 297 bar<br/>Crude oil / 2–4 °C"]
+    A["Pipeline Conditions<br/>3,000 m / 302 bar<br/>Crude oil / 2–4 °C"]
 
     B["7-Layer Pipeline Shell<br/>Foam → Inconel → Sensors → Healing → Fiber → Power"]
 
@@ -177,7 +177,7 @@ Instead, Layer 5 uses an IPDI (isocyanate) and FBE (Fusion Bonded Epoxy) system,
 | Parameter         | Value                  |
 | ------------------ | ----------------------- |
 | Depth              | 3,000 m                 |
-| External Pressure  | Approximately 297 bar   |
+| External Pressure  | Approximately 302 bar   |
 | Temperature        | 2-4 degrees Celsius     |
 | Fluid              | Crude oil (850 kg/m3)   |
 | Pipeline           | 50 km length, 0.5 m diameter |
