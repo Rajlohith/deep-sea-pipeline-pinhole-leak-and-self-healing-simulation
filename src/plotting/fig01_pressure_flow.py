@@ -34,7 +34,7 @@ def fig1_pressure_flow(phys: PipelinePhysics, leak: LeakSimulator):
     ax1.plot(xk, Pl, color=C_LEAK, lw=2.0, ls="--", label="True leak signal")
     ax1.axvline(20, color=C_LEAK, lw=1.2, ls=":", alpha=0.8)
     ax1.annotate("Pinhole @ 20 km\n(L4->detect, L5->heal)",
-                 xy=(20, 120), xytext=(25, 130), fontsize=7.5, color=C_LEAK,
+                 xy=(20, 120), xytext=(33, 122), fontsize=7.5, color=C_LEAK,
                  arrowprops=dict(arrowstyle="->", color=C_LEAK))
     ax1.set_xlabel("Distance (km)")
     ax1.set_ylabel("Pressure (bar)")

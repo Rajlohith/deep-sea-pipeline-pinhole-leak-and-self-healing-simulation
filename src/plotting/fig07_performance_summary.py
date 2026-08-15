@@ -125,8 +125,8 @@ def fig7_performance_summary(
     axb.set_xticks(xb)
     axb.set_xticklabels(labels_b, fontsize=7.5)
     axb.set_ylabel("Cumulative oil loss (L, log scale)")
-    axb.set_title("Oil Loss: Traditional vs 7-Layer Hybrid Healing\n"
-                  "L5 Hybrid (IPDI+PTFE+SMP) sealing performance [Ref 10]")
+    axb.set_title("Oil Loss: Traditional vs 7-Layer\n"
+                  "Hybrid Healing (IPDI+PTFE+SMP) [Ref 10]", fontsize=8.5)
     axb.legend(fontsize=8)
     axb.grid(True, axis="y", alpha=0.35)
 

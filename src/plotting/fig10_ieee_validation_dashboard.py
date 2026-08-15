@@ -172,7 +172,7 @@ def fig10_ieee_validation_dashboard(
     axd.set_xlabel("Detection Lag (hours)")
     axd.set_ylabel("Density")
     axd.set_title("Detection Lag Validation\n"
-                  "L3 Quartz + L6 DAS vs PHMSA empirical [Ref 4, 5]")
+                  "L3 Quartz + L6 DAS vs PHMSA [Ref 4, 5]", fontsize=9)
     axd.legend(fontsize=7.5)
     axd.grid(True, alpha=0.3)
 
@@ -201,9 +201,10 @@ def fig10_ieee_validation_dashboard(
     axh.annotate("", xy=(5, vol_h * 1.5), xytext=(4, vol_u * 0.7),
                  arrowprops=dict(arrowstyle="->", color=LAYER_CLR[5],
                                  lw=1.5, connectionstyle="arc3,rad=0.2"))
-    axh.text(4.5, np.sqrt(vol_h * vol_u),
+    axh.text(0.62, 0.5,
              f"-{(1 - vol_h/vol_u)*100:.0f}%\nL5 IPDI\n[Ref 10]",
-             ha="center", fontsize=7.5, color=LAYER_CLR[5], fontweight="bold")
+             transform=axh.transAxes,
+             ha="center", va="center", fontsize=7, color=LAYER_CLR[5], fontweight="bold")
     axh.grid(True, axis="y", alpha=0.3)
     axh.legend(handles=[
         mpatches.Patch(color=C_PHMSA, label="PHMSA empirical"),
@@ -211,7 +212,7 @@ def fig10_ieee_validation_dashboard(
         mpatches.Patch(color=LAYER_CLR[5], label="L5 IPDI healed"),
     ], fontsize=7.5, loc="upper left")
 
-    fig.subplots_adjust(left=0.05, right=0.98, bottom=0.07, top=0.90)
+    fig.subplots_adjust(left=0.05, right=0.98, bottom=0.07, top=0.85)
     _save_split_panels(fig, [
         ("Fig10_Validation_Scorecard.svg", [axs]),
         ("Fig10_Volume_Scatter.svg", [axv]),
