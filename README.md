@@ -466,34 +466,84 @@ This project can be used to study:
 
 ## References
 
-Every material choice, healing agent, sensing principle, and physical constant in this simulation is grounded in a cited source. The full bibliography, as maintained in the project docstring, is reproduced below.
+Every material choice, healing agent, sensing principle, and physical constant in this simulation is grounded in a cited source. The full 40-reference bibliography, as used in the accompanying manuscript, is reproduced below, with a note on where each source is used in the codebase.
 
-1. White, S. R. et al. (2001). Autonomic healing of polymer composites. *Nature*, 409(6822), 794-797. Original microcapsule self-healing concept under lab (dry) conditions; used as the baseline benchmark this simulation improves upon for deep-sea use.
+1. Pipeline and Hazardous Materials Safety Administration (2026). Pipeline incident data and hazardous liquid accident statistics. U.S. Department of Transportation. The real-world validation dataset underlying the PHMSA cross-validation in `src/validation/`, benchmarking simulated operating pressure, pipe diameter, leak-type frequency, and volume loss against empirical incident records (Figures 8-10).
 
-2. Toohey, K. S. et al. (2007). Self-healing materials with microvascular networks. *Nature Materials*, 6(8), 581-585. Source of the vascular network rate constant (k = 0.05 per minute) used in the Layer 5 Phase 2 healing model.
+2. Wenz, G. M. (1962). Acoustic ambient noise in the ocean: Spectra and sources. *Journal of the Acoustical Society of America*, 34(12), 1936-1956. Source of the ocean ambient noise floor used to calibrate hydrophone and DAS noise in Layer 4 and Layer 6; the Strouhal leak tone is superimposed on this noise model.
 
-3. Kessler, M. R. and White, S. R. (2001). Self-activated healing of delamination damage in woven composites. *Composites Part A*, 32(5), 683-699. Epoxy capsule characterization and mechanical recovery data informing the chemical sealing phase.
+3. Bakhtawar, B. and Zayed, T. (2021). Review of water leak detection and localization methods through hydrophone technology. *Journal of Pipeline Systems Engineering and Practice*, 12(4), 03121002. Motivates the acoustic/hydrophone detection principle used in Layer 4 - that an escaping leak radiates a detectable pressure wave.
 
-4. Bao, X. and Chen, L. (2012). Recent progress in distributed fiber optic sensors. *Sensors*, 12(7), 8601-8639. Basis for the Layer 6 distributed acoustic sensing (DAS) and BOTDR pipeline leak detection principles, including the under-30-second detection time benchmark.
+4. Fan, H., Tariq, S., and Zayed, T. (2022). Acoustic leak detection approaches for water pipelines. *Automation in Construction*, 138, 104226. Supports the Layer 6 distributed acoustic sensing (DAS) Gaussian spatial-bump model used to simulate a leak signature along the fiber.
 
-5. Wenz, G. M. (1962). Acoustic ambient noise in the ocean: Spectra and sources. *Journal of the Acoustical Society of America*, 34(12), 1936-1956. Source of the ocean ambient noise floor (120 dB re 1 microPa) used to calibrate hydrophone noise in Layer 4 and Module 7.
+5. Lopez-Higuera, J. M., Cobo, L. R., Incera, A. Q., and Cobo, A. (2011). Fiber optic sensors in structural health monitoring. *Journal of Lightwave Technology*, 29(4), 587-608. General basis for the Layer 6 distributed fiber-optic sensing concept (strain/vibration/backscatter perturbation mapping).
 
-6. ISO 5167:2003. Measurement of fluid flow by means of pressure differential devices. International Organization for Standardization. Source of the orifice discharge coefficient (Cd = 0.61) used throughout the leak flow rate calculations.
+6. Xenaki, A., Gerstoft, P., Williams, E., and Abadi, S. (2025). Overview of distributed acoustic sensing: Theory and ocean applications. *Journal of the Acoustical Society of America*. Basis for extending Layer 6 fiber sensing to continuous, cable-length ocean monitoring (DAS).
 
-7. Blasius, H. (1913). Das Ahnlichkeitsgesetz bei Reibungsvorgangen in Flussigkeiten. *Forschungsarbeiten VDI*, 131, 1-40. Source of the turbulent friction factor correlation (f = 0.316 / Re^0.25) used in the pipeline flow model.
+7. Lu, X. et al. (2025). Superior toughness-strength epoxy via biocomposite curing for deep-sea equipment using multifunctional syntactic foams. *ACS Applied Polymer Materials*. Material basis for the Layer 1 UE44/TMA syntactic foam formulation.
 
-8. Munson, B. R., Young, D. F., and Okiishi, T. H. (2006). *Fundamentals of Fluid Mechanics*, 5th ed. John Wiley and Sons. Source of the Darcy-Weisbach pressure drop relation, orifice flow derivation, and the Strouhal number (St = 0.2) used for the orifice vortex shedding tone calculation.
+8. Anirudh, S., Jayalakshmi, C. G., Anand, A., Kandasubramanian, B., and Ismail, S. O. (2022). Epoxy/hollow glass microsphere syntactic foams for structural and functional application - A review. *European Polymer Journal*, 171, 111163. Supports the Layer 1 design choice of hollow-microsphere-filled epoxy for density reduction while retaining pressure resistance.
 
-9. American Petroleum Institute. API MPMS (Manual of Petroleum Measurement Standards). Washington, D.C. Source of crude oil density (850 kg/m3) and viscosity (0.015 Pa.s at approximately 4 degrees Celsius) used in the physics module.
+9. Loubrieu, G. et al. (2022). Hydrostatic strength of hollow glass microspheres composites: Influencing factors and modelling. *Composites Part C: Open Access*, 8, 100286. Source for the Layer 1 hydrostatic pressure-vs-depth margin model (`fig06_structural_environment.py`).
 
-10. Zeng, X. et al. (2025). Self-healing performance and anti-corrosion mechanism of microcapsule-containing epoxy coatings under deep-sea environment. *Progress in Organic Coatings*, 202, 109108. The key deep-sea validation source: IPDI@SPUA capsules tested at 15 MPa seawater pressure, showing pressure promotes (rather than prevents) capsule rupture, with impedance maintained after 1,008 hours of immersion. This is the primary justification for replacing DCPD with IPDI in Layer 5.
+10. Smith, M. J. A., Yousaf, Z., Potluri, P., and Parnell, W. J. (2021). Modelling hollow thermoplastic syntactic foams under high-strain compressive loading. *Composites Structures*, 257, 113169. Structural modelling reference for Layer 1 syntactic foam under compressive loading.
 
-11. Feng, H. et al. (2020). Fabrication of microcapsule-type composites with the capability of underwater self-healing and damage visualization. *RSC Advances*, 10(56), 33675-33682. Reports 85.6 percent underwater healing efficiency using water-activated amine curing agents, validating the broader choice of water-reactive (rather than water-sensitive) healing chemistry.
+11. Yousaf, Z., Morrison, N., and Parnell, W. J. (2022). Tensile properties of all-polymeric syntactic foam composites. *Composites Part A: Applied Science and Manufacturing*, 152, 106703. Additional Layer 1 material-property reference for the syntactic foam formulation.
 
-12. Mauldin, T. C. et al. (2007). Self-healing kinetics and the stereoisomers of dicyclopentadiene. *Journal of the Royal Society Interface*, 4(13), 389-393. Shows endo-DCPD sits near its solidification point at 3 degrees Celsius and that healing time at this temperature is orders of magnitude slower than at room temperature, the primary literature basis for excluding DCPD plus Grubbs catalyst from this design.
+12. Selcuk, S., Ahmetoglu, U., and Gokce, E. C. (2023). Basalt fiber reinforced polymer composites (BFRP) other than rebars: A review. *Materials Today Communications*, 37, 107359. Basis for the Layer 1 basalt-fiber crack-bridging network layered into the syntactic foam.
 
-13. Afrinaldi, L. A. T. W. et al. (2023). Self-healing polymers designed for underwater applications. *Advances in Polymer Technology*, 2023, 6614326. Reports a 60 percent reduction in polymerization rate under saline conditions relative to lab conditions; used to derive the realistic 55-75 percent deep-sea healing efficiency range for the IPDI agent (down from the 70-90 percent lab values reported by White, 2001).
+13. Al-Maharma, D., Patnaikuni, I., and Singh, K. K. (2022). Processing and mechanical properties of basalt fibre-reinforced thermoplastic composites. *Polymers*, 14(6), 1220. Supports the mechanical-property assumptions for the Layer 1 basalt-fiber reinforcement.
 
-14. U.S. Department of Transportation, Pipeline and Hazardous Materials Safety Administration (PHMSA) (2025). Hazardous Liquid Incident Flagged Files (2010-Present). The real-world validation dataset (N = 5,890 incidents) used in Figures 8 through 10 and the IEEE-style validation report to benchmark simulated pipe diameter, operating pressure, leak type prevalence, and volume loss against empirical incident records.
+14. Zhao, H. et al. (2025). Mechanical properties and tensile intrinsic study of basalt fibre-silicon carbide co-reinforced polyurethane cement mortar. *Construction and Building Materials*. Additional basalt-fiber composite reference supporting Layer 1 material selection.
 
-15. Hamilton, A. R., Sottos, N. R., and White, S. R. (2012). Pressurized vascular systems for self-healing materials. *Journal of the Royal Society Interface*, 9(70), 1020-1028. Source for pressurized PTFE vascular channel behavior at elevated pressure, mapped directly to the Layer 5 PTFE channel network used in this simulation's deep-sea application.
+15. Fiore, V., Scalici, T., Di Bella, G., and Valenza, A. (2015). A review on basalt fibre and its composites. *Composites Part B: Engineering*, 74, 74-94. General basalt-fiber composites reference underpinning the Layer 1 crack-bridging design.
+
+16. Special Metals Corporation (2013). INCONEL alloy 625. Technical Bulletin. Source of the Layer 2 structural-shell material specification: the 350 bar pressure rating and chloride-stress-corrosion resistance used in `pipeline_physics.py`.
+
+17. Zhang, S., Li, F., Luo, J., Sahul, R., and Shrout, T. R. (2013). Relaxor-PbTiO3 single crystals for various applications. *IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control*, 60(8), 1572-1580. Basis for the Layer 3 PMN-PT relaxor single-crystal pressure/vibration sensor.
+
+18. Luo, H. (2014). Growth and characterization on PMN-PT-based single crystals. *Crystals*, 4(3), 331-341. Additional material-characterization reference for the Layer 3 PMN-PT sensing element.
+
+19. Yang, Y. et al. (2023). Piezoelectric materials and sensors for structural health monitoring. *Sensors*, 23(1), 543. General piezoelectric-sensing reference supporting the Layer 3 pressure/vibration sensing design.
+
+20. Jung, M. K. et al. (2020). Sensitivity and directivity analysis of piezoelectric ultrasonic cantilever-based MEMS hydrophone for underwater applications. *Journal of Marine Science and Engineering*, 8(10), 784. Basis for the Layer 4 MEMS hydrophone element in the quartz + hydrophone hybrid sensor.
+
+21. Xu, Y. et al. (2020). Design and fabrication of a novel MEMS piezoelectric hydrophone. *Sensors and Actuators A: Physical*, 313, 112183. Additional MEMS hydrophone design reference for Layer 4.
+
+22. Zhang, J. et al. (2009). A micromachined piezoelectric hydrophone with hydrostatically balanced air backing. *Sensors and Actuators A: Physical*, 151(2), 147-152. Supports the hydrostatic-balancing approach used in the Layer 4 hydrophone model.
+
+23. Li, Y. et al. (2020). High-sensitivity cuboid interferometric fiber-optic hydrophone based on planar rectangular film sensing. *Sensors*, 20(22), 6422. Fiber-optic hydrophone reference contributing to the Layer 4 quartz + hydrophone hybrid sensing design.
+
+24. White, S. R. et al. (2001). Autonomic healing of polymer composites. *Nature*, 409, 794-797. The original microcapsule self-healing concept under lab (dry) conditions; used in the manuscript as the baseline benchmark that the Layer 5 hybrid system improves upon for deep-sea use.
+
+25. Toohey, K. S., Sottos, N. R., Lewis, J. A., Moore, J. S., and White, S. R. (2007). Self-healing materials with microvascular networks. *Nature Materials*, 6, 581-585. Source of the vascular-network rate constant (k = 0.05 per minute) used in the Layer 5 Phase 2 (PTFE-vascular) healing model in `healing_system.py`.
+
+26. Paladugu, S. R. M. et al. (2022). A comprehensive review of self-healing polymer, metal, and ceramic matrix composites and their applications. *Materials*. Supports the manuscript's motivation for a hybrid, multi-mechanism healing approach ("no single chemistry covers all damage rates well").
+
+27. Al-Maharma, A., Al Azzawi, S., and Rahman, M. M. (2025). Development of microcapsule-based self-healing composite. *Alexandria Engineering Journal*. Additional microcapsule self-healing reference informing the Layer 5 chemical-sealing phase.
+
+28. Gupta, E., Vates, U. K., and Singh, G. K. (2019). Self-healing composites: A state-of-the-art review. *Composites Part A: Applied Science and Manufacturing*, 122, 1-15. General self-healing composites survey supporting the Layer 5 design rationale.
+
+29. Utrera-Barrios, S., Verdejo, R., Lopez-Manchado, M. A., and Hernandez Santana, M. (2021). Progress and challenges in self-healing composite materials. *Materials Advances*, 2, 602-632. Reinforces the hybrid-healing motivation and informs the Layer 5 mechanism selection.
+
+30. Wang, H. et al. (2025). Novel microvascular channel method for developing self-healing functions of composite structures. *Composites Part A: Applied Science and Manufacturing*. Supports the Layer 5 PTFE pressurized vascular-channel network design.
+
+31. Rodrigues, C. et al. (2020). Emerging triboelectric nanogenerators for ocean wave energy harvesting. *Energy and Environmental Science*, 13, 2657-2683. Basis for the Layer 7 piezoelectric/triboelectric energy-harvesting component.
+
+32. Liang, X. et al. (2023). Triboelectric nanogenerators for ocean wave energy harvesting. *Electronics*, 12(1), 225. Additional triboelectric harvesting reference for Layer 7 power budgeting.
+
+33. Ahmed, M. A. et al. (2024). Systematic literature review of wave energy harvesting using triboelectric nanogenerator. *Renewable and Sustainable Energy Reviews*. Supports the ~200 mW continuous harvesting assumption used in the Layer 7 power model.
+
+34. Li, G. and Zhu, W. (2023). Tidal current energy harvesting technologies. *Renewable and Sustainable Energy Reviews*, 179, 113269. Alternative/supporting harvesting-technology reference for Layer 7.
+
+35. Zhang, Y. et al. (2025). Hybrid offshore renewable energy harvest system: A review. *Energy Conversion and Management*. Basis for combining multiple harvesting modalities in the Layer 7 hybrid power design.
+
+36. Wang, Y. et al. (2023). Marine energy harvesting from tidal currents and offshore winds. *Nano Energy*. Additional marine energy-harvesting reference supporting Layer 7.
+
+37. Simon, P. and Gogotsi, Y. (2008). Materials for electrochemical capacitors. *Nature Materials*, 7, 845-854. Basis for the supercapacitor buffering component in the Layer 7 hybrid power system (`power_system.py`).
+
+38. Khan, M. J., Bhuyan, G., Iqbal, M. T., and Quaicoe, J. E. (2009). Hydrokinetic energy conversion systems and assessment of horizontal and vertical axis turbines for river and tidal applications. *Applied Energy*, 86(10), 1823-1835. Supports the hydrokinetic/turbine option considered for Layer 7 energy harvesting.
+
+39. Breiman, L. (2001). Random forests. *Machine Learning*, 45(1), 5-32. The seminal Random Forest algorithm used for the sixteen-feature leak-classification model in `src/ml/sensor_fusion.py`.
+
+40. Pedregosa, F. et al. (2011). Scikit-learn: Machine learning in Python. *Journal of Machine Learning Research*, 12, 2825-2830. The library used to implement and train the Random Forest classifier in `src/ml/sensor_fusion.py`.
