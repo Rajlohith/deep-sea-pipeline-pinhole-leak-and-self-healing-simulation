@@ -480,7 +480,7 @@ Every material choice, healing agent, sensing principle, and physical constant i
 
 6. Xenaki, A., Gerstoft, P., Williams, E., and Abadi, S. (2025). Overview of distributed acoustic sensing: Theory and ocean applications. *Journal of the Acoustical Society of America*, 158(1), 801-825. doi: 10.1121/10.0037218. Basis for extending Layer 6 fiber sensing to continuous, cable-length ocean monitoring (DAS).
 
-7. Lu, X. et al. (2025). Superior toughness-strength epoxy via biocomposite curing for deep-sea equipment using multifunctional syntactic foams. *ACS Applied Polymer Materials*. doi: 10.1021/acsapm.5c02794. Material basis for the Layer 1 UE44/TMA syntactic foam formulation.
+7. Lu, X. et al. (2025). Superior toughness-strength epoxy via biocomposite curing for deep-sea equipment using multifunctional syntactic foams. *ACS Applied Polymer Materials*, 7(19), 13296-13309. doi: 10.1021/acsapm.5c02794. Material basis for the Layer 1 UE44/TMA syntactic foam formulation.
 
 8. Anirudh, S., Jayalakshmi, C. G., Anand, A., Kandasubramanian, B., and Ismail, S. O. (2022). Epoxy/hollow glass microsphere syntactic foams for structural and functional application - A review. *European Polymer Journal*, 171, 111163. doi: 10.1016/j.eurpolymj.2022.111163. Supports the Layer 1 design choice of hollow-microsphere-filled epoxy for density reduction while retaining pressure resistance.
 
@@ -494,7 +494,7 @@ Every material choice, healing agent, sensing principle, and physical constant i
 
 13. Deng, X., Hoo, M. S., Cheah, Y. W., and Tran, L. Q. N. (2022). Processing and mechanical properties of basalt fibre-reinforced thermoplastic composites. *Polymers*, 14(6), 1220. doi: 10.3390/polym14061220. Supports the mechanical-property assumptions for the Layer 1 basalt-fiber reinforcement.
 
-14. Huang, L., Gong, S., Li, G., Li, S., Tang, K., and Wang, W. (2025). Mechanical properties and tensile intrinsic study of basalt fibre-silicon carbide (SiC) co-reinforced polyurethane cement mortar. *Materials & Design*, 261, 115299. doi: 10.1016/j.matdes.2025.115299. Additional basalt-fiber composite reference supporting Layer 1 material selection.
+14. Huang, L., Gong, S., Li, G., Li, S., Tang, K., and Wang, W. (2026). Mechanical properties and tensile intrinsic study of basalt fibre-silicon carbide (SiC) co-reinforced polyurethane cement mortar. *Materials & Design*, 261, 115299. doi: 10.1016/j.matdes.2025.115299. Additional basalt-fiber composite reference supporting Layer 1 material selection.
 
 15. Fiore, V., Scalici, T., Di Bella, G., and Valenza, A. (2015). A review on basalt fibre and its composites. *Composites Part B: Engineering*, 74, 74-94. doi: 10.1016/j.compositesb.2014.12.034. General basalt-fiber composites reference underpinning the Layer 1 crack-bridging design.
 
@@ -508,7 +508,7 @@ Every material choice, healing agent, sensing principle, and physical constant i
 
 20. Abdul, B., Mastronardi, V. M., Qualtieri, A., Algieri, L., Guido, F., Rizzi, F., and De Vittorio, M. (2020). Sensitivity and directivity analysis of piezoelectric ultrasonic cantilever-based MEMS hydrophone for underwater applications. *Journal of Marine Science and Engineering*, 8(10), 784. doi: 10.3390/jmse8100784. Basis for the Layer 4 MEMS hydrophone element in the quartz + hydrophone hybrid sensor.
 
-21. Shi, S., Geng, W., He, J., Hou, X., Mu, J., Li, J. F., and Chou, X. (2020). Design and fabrication of a novel MEMS piezoelectric hydrophone. *Sensors and Actuators A: Physical*, 313, 112203. doi: 10.1016/j.sna.2020.112203. Additional MEMS hydrophone design reference for Layer 4.
+21. Shi, S., Geng, W., Bi, K., He, J., Hou, X., Mu, J., Li, F., and Chou, X. (2020). Design and fabrication of a novel MEMS piezoelectric hydrophone. *Sensors and Actuators A: Physical*, 313, 112203. doi: 10.1016/j.sna.2020.112203. Additional MEMS hydrophone design reference for Layer 4.
 
 22. Choi, S., Lee, H., and Moon, W. (2010). A micro-machined piezoelectric hydrophone with hydrostatically balanced air backing. *Sensors and Actuators A: Physical*, 158, 60-71. doi: 10.1016/j.sna.2009.12.019. Supports the hydrostatic-balancing approach used in the Layer 4 hydrophone model.
 
@@ -518,7 +518,7 @@ Every material choice, healing agent, sensing principle, and physical constant i
 
 25. Toohey, K. S., Sottos, N. R., Lewis, J. A., Moore, J. S., and White, S. R. (2007). Self-healing materials with microvascular networks. *Nature Materials*, 6, 581-585. doi: 10.1038/nmat1934. Source of the vascular-network rate constant (k = 0.05 per minute) used in the Layer 5 Phase 2 (PTFE-vascular) healing model in `healing_system.py`.
 
-26. Paladugu, S. R. M. et al. (2022). A comprehensive review of self-healing polymer, metal, and ceramic matrix composites and their applications. *Materials*, 15(23), 8521. doi: 10.3390/ma15238521. Supports the manuscript's motivation for a hybrid, multi-mechanism healing approach ("no single chemistry covers all damage rates well").
+26. Paladugu, S. R. M. et al. (2022). A comprehensive review of self-healing polymer, metal, and ceramic matrix composites and their modeling aspects for aerospace applications. *Materials*, 15(23), 8521. doi: 10.3390/ma15238521. Supports the manuscript's motivation for a hybrid, multi-mechanism healing approach ("no single chemistry covers all damage rates well").
 
 27. Adil, M. M., Rabbi, M. S., and Tasnim, T. (2025). Development of microcapsule-based self-healing composite: A critical review on influencing factors of microencapsulation, healing efficiency, thermal stability and application. *Alexandria Engineering Journal*, 122, 1-17. doi: 10.1016/j.aej.2025.02.092. Additional microcapsule self-healing reference informing the Layer 5 chemical-sealing phase.
 
@@ -528,15 +528,15 @@ Every material choice, healing agent, sensing principle, and physical constant i
 
 30. Koştur, E., Geren, N., and Özkutlu Demirel, M. (2025). Novel microvascular channel method for developing self-healing functions of composite structures. *Composites Part A: Applied Science and Manufacturing*, 199, 109226. doi: 10.1016/j.compositesa.2025.109226. Supports the Layer 5 PTFE pressurized vascular-channel network design.
 
-31. Rodrigues, C. et al. (2020). Emerging triboelectric nanogenerators for ocean wave energy harvesting. *Energy and Environmental Science*, 13, 2657-2683. doi: 10.1039/D0EE01258K. Basis for the Layer 7 piezoelectric/triboelectric energy-harvesting component.
+31. Rodrigues, C. et al. (2020). Emerging triboelectric nanogenerators for ocean wave energy harvesting: State of the art and future perspectives. *Energy and Environmental Science*, 13, 2657-2683. doi: 10.1039/D0EE01258K. Basis for the Layer 7 piezoelectric/triboelectric energy-harvesting component.
 
 32. Liang, X., Liu, S., Yang, H., and Jiang, T. (2023). Triboelectric nanogenerators for ocean wave energy harvesting: Unit integration and network construction. *Electronics*, 12(1), 225. doi: 10.3390/electronics12010225. Additional triboelectric harvesting reference for Layer 7 power budgeting.
 
 33. Salman, M., Sorokin, V., and Aw, K. (2024). Systematic literature review of wave energy harvesting using triboelectric nanogenerator. *Renewable and Sustainable Energy Reviews*, 201, 114626. doi: 10.1016/j.rser.2024.114626. Supports the ~200 mW continuous harvesting assumption used in the Layer 7 power model.
 
-34. Li, G. and Zhu, W. (2023). Tidal current energy harvesting technologies. *Renewable and Sustainable Energy Reviews*, 179, 113269. doi: 10.1016/j.rser.2023.113269. Alternative/supporting harvesting-technology reference for Layer 7.
+34. Li, G. and Zhu, W. (2023). Tidal current energy harvesting technologies: A review of current status and life cycle assessment. *Renewable and Sustainable Energy Reviews*, 179, 113269. doi: 10.1016/j.rser.2023.113269. Alternative/supporting harvesting-technology reference for Layer 7.
 
-35. Ma, Y., Cui, L., Zhou, H., and Bhattacharya, S. (2025). Hybrid offshore renewable energy harvest system: A review. *Energy Conversion and Management*, 120654. doi: 10.1016/j.enconman.2025.120654. Basis for combining multiple harvesting modalities in the Layer 7 hybrid power design.
+35. Ma, Y., Cui, L., Zhou, H., and Bhattacharya, S. (2026). Hybrid offshore renewable energy harvest system: A review. *Energy Conversion and Management*, 348, 120654. doi: 10.1016/j.enconman.2025.120654. Basis for combining multiple harvesting modalities in the Layer 7 hybrid power design.
 
 36. Liu, J., Bao, B., Chen, J., Wu, Y., and Wang, Q. (2023). Marine energy harvesting from tidal currents and offshore winds: A 2-DOF system based on flow-induced vibrations. *Nano Energy*, 114, 108664. doi: 10.1016/j.nanoen.2023.108664. Additional marine energy-harvesting reference supporting Layer 7.
 
